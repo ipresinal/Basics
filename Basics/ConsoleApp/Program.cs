@@ -90,8 +90,9 @@ namespace ConsoleApp
             Console.ReadLine();
             Console.WriteLine("Hello World!");
 
-            Task.Run(() =>
+            Task.Run(async () =>
             {
+                await Task.Delay(1000);
                 Console.WriteLine("Starting download...");
                 var webclient = new HttpClient();
                 var html = webclient.GetStringAsync("http://angelsix.com");
